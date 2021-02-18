@@ -3,10 +3,10 @@
 </h1>
 <div class="d-flex justify-content-start align-items-center m-3">
   <% @cocktails.each do |cocktail| %>
-  <div class="card m-3" style="width: 18rem;">
-    <img src="https://picsum.photos/500" class="card-img-top" alt="...">
-    <div class="card-body">
-      <p class="card-text">
+  <div class="cocktail-card card m-3" style="width: 18rem;">
+    <img src="https://picsum.photos/500" class="card-img-top" alt="Placeholder">
+    <div class="card-body text-center">
+      <p class="card-text text-decoration-none">
           <%= link_to cocktail.name, cocktail_path(cocktail)%>
       </p>
     </div>
@@ -14,4 +14,5 @@
   <% end %>
 </div>
 
-<%= link_to "Add a new Cocktail", new_cocktail_path, class: "btn btn-primary rounded"%>
+<%= link_to "Add a new Cocktail", new_cocktail_path,
+class: "btn btn-primary rounded"%>
