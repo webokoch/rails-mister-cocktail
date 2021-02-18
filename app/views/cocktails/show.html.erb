@@ -2,5 +2,23 @@
     <%= @cocktail.name %>
 </h1>
 
+<h3>How to mix it</h3>
+  <% @cocktail.doses.each do |dose| %>
+    <div class="d-flex align-items-center justify-content-start">
+      <p class="mb-1">
+        <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe,
+        cocktail_dose_path(@cocktail, dose),
+        method: :delete,
+        data: { confirm: "Delete #{dose.ingredient.name}?" }%>
+      </p>
+      <p class="ml-3 mb-1">
+        <%= dose.description %> <%= dose.ingredient.name %>
+      </p>
+    </div>
+  <% end %>
 
-<%= link_to "Back to all Cocktails", cocktails_path, class: "ml-5 btn btn-primary rounded"%>
+<%= link_to "Back to all Cocktails", cocktails_path,
+class: "ml-5 mt-3 btn btn-primary rounded"%>
+
+<%= link_to "Add a new Dose",  new_cocktail_dose_path(@cocktail),
+class: "ml-5 mt-3 btn btn-primary rounded"%>
