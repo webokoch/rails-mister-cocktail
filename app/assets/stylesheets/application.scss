@@ -9,7 +9,10 @@
 @import "font-awesome";
 
 // Your CSS partials
+@import "components/cocktail-card";
 @import "components/index";
 @import "pages/index";
 @import 'select2/dist/css/select2';
 @import 'cocktails';
+@import 'components/container';
+@import 'components/product-card';

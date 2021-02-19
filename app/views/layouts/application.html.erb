@@ -10,8 +10,15 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="bg-secondary">
-    <div class="container p-5 shadow rounded mt-5 bg-white">
+  <body class="bg-secondary" >
+    <div class="navbar fixed-top w-100">
+  <h1 class="ml-5">
+    Mister Cocktails
+  </h1>
+  <%= link_to "Add a new Cocktail", new_cocktail_path,
+class: "btn btn-primary rounded mr-5"%>
+</div>
+    <div class="container container-position shadow rounded mt-5 bg-white">
       <%= yield %>
     </div>
   </body>
