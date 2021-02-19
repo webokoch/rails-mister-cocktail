@@ -1,6 +1,6 @@
 
 
-<div class="cocktail-cards">
+<div class="cocktail-cards" style="background-image: url('<%= image_path "neon.jpg" %>'); background-position: center;  background-size: cover">
   <% @cocktails.each do |cocktail| %>
   <div class="cocktail-card card m-3">
       <%= image_tag "https://picsum.photos/500", alt: "alttext", class: "card-img-top" %>
