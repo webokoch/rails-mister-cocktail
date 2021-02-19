@@ -3,13 +3,10 @@
 <div class="cocktail-cards">
   <% @cocktails.each do |cocktail| %>
   <div class="cocktail-card card m-3">
-      <img src="https://picsum.photos/500" class="card-img-top" alt="Placeholder">
-
-        <p class="text-center">
-            <%= link_to cocktail.name, cocktail_path(cocktail)%>
-        </p>
-
-
+      <%= image_tag "https://picsum.photos/500", alt: "alttext", class: "card-img-top" %>
+      <p class="text-center">
+          <%= link_to cocktail.name, cocktail_path(cocktail)%>
+      </p>
   </div>
   <% end %>
 </div>
