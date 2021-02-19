@@ -3,10 +3,14 @@
 <div class="cocktail-cards">
   <% @cocktails.each do |cocktail| %>
   <div class="cocktail-card card m-3">
-      <%= image_tag "https://picsum.photos/500", alt: "alttext", class: "card-img-top" %>
-      <p class="text-center">
-          <%= link_to cocktail.name, cocktail_path(cocktail)%>
-      </p>
+    <% if cocktail.photo.attached? %>
+      <%= cl_image_tag cocktail.photo.key, scale: :fit %>
+    <% else %>
+      <%= image_tag "https://loremflickr.com/400/300/cocktail", alt: "alttext" %>
+    <% end %>
+    <p class="text-center">
+      <%= link_to cocktail.name, cocktail_path(cocktail)%>
+    </p>
   </div>
   <% end %>
 </div>

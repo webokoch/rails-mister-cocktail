@@ -3,7 +3,11 @@
 
 
 <div class="card-product py-3">
-  <%= image_tag "https://picsum.photos/500", alt: "alttext" %>
+  <% if @cocktail.photo.attached? %>
+    <%= cl_image_tag @cocktail.photo.key, scale: :pad %>
+  <% else %>
+    <%= image_tag "https://loremflickr.com/300/400/cocktail", alt: "alttext" %>
+  <% end %>
   <div class="card-product-infos ml-3">
     <h1>
         <%= @cocktail.name %>

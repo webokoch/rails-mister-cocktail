@@ -13,6 +13,10 @@
       font-size: 24px;
       color: black;
     }
+    img {
+      max-height: 200px;
+      object-fit: cover;
+    }
 }
 
 @media (min-width: 576px) {
